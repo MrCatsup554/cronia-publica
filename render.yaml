@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: cronia
+    runtime: node
+    plan: free
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: node apps/server/dist/index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
+      - key: STATIC_DIR
+        value: apps/web/dist
+      - key: OCR_LANGS
+        value: spa+eng

@@ -1,0 +1,36 @@
+{
+  "name": "cronia",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Cronia — organizador de horarios escolares: importa tu carga académica y expórtala como imagen o PDF.",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=20.11" },
+  "workspaces": ["packages/*", "apps/*"],
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:server dev:web",
+    "dev:web": "npm run dev --workspace @cronia/web",
+    "dev:server": "npm run dev --workspace @cronia/server",
+    "build": "npm run build --workspace @cronia/core && npm-run-all --parallel build:web build:server",
+    "build:web": "npm run build --workspace @cronia/web",
+    "build:server": "npm run build --workspace @cronia/server",
+    "start": "npm run start --workspace @cronia/server",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --build --force",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/node": "^22.10.2",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "globals": "^15.14.0",
+    "npm-run-all2": "^7.0.2",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.1",
+    "vitest": "^2.1.8"
+  }
+}

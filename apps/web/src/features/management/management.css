@@ -1,0 +1,300 @@
+.cronia-demo-notice {
+  margin: 0;
+  padding: 0.6rem clamp(1rem, 4vw, 2.5rem);
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.cronia-footer {
+  padding: 0.75rem clamp(1rem, 4vw, 2.5rem) 4.5rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.cronia-footer a,
+.management-header a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.cronia-chat {
+  position: fixed;
+  z-index: 20;
+  right: clamp(0.75rem, 3vw, 1.5rem);
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  display: grid;
+  justify-items: end;
+  gap: 0.55rem;
+  max-width: calc(100vw - 1.5rem);
+}
+
+.chat-trigger {
+  box-shadow: var(--shadow);
+}
+
+.chat-trigger > span {
+  display: grid;
+  place-items: center;
+  width: 1.3em;
+  height: 1.3em;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+.cronia-chat-panel {
+  width: min(25rem, 100%);
+  max-height: calc(100dvh - 5rem);
+  overflow: auto;
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.85rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.cronia-chat-panel header,
+.management-header,
+.management-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.cronia-chat-panel h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.chat-log {
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+  max-height: min(36dvh, 17rem);
+  overflow: auto;
+  overflow-wrap: anywhere;
+}
+
+.chat-message {
+  justify-self: start;
+  max-width: 93%;
+  padding: 0.6rem 0.75rem;
+  background: var(--surface-2);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+}
+
+.chat-message p {
+  margin: 0;
+}
+
+.chat-message .btn {
+  margin-top: 0.45rem;
+}
+
+.chat-message-visitor {
+  justify-self: end;
+  background: var(--accent-soft);
+}
+
+.chat-topics,
+.management-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.chat-topics .btn {
+  min-height: 2rem;
+  font-size: 0.75rem;
+}
+
+.chat-question {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.45rem;
+}
+
+.chat-support {
+  display: grid;
+  gap: 0.7rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.7rem;
+  justify-items: start;
+}
+
+.chat-support form {
+  width: 100%;
+}
+
+.management-page {
+  width: min(69rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: clamp(1.25rem, 4vw, 3rem) 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.management-header h1,
+.management-heading h2,
+.management-card h2,
+.management-card h3 {
+  margin: 0;
+}
+
+.management-header h1 {
+  margin-top: 0.35rem;
+  font-size: clamp(1.6rem, 4vw, 2.35rem);
+}
+
+.management-card {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: 0.85rem;
+  padding: clamp(0.85rem, 3vw, 1.4rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+.management-login {
+  width: min(100%, 27rem);
+}
+
+.management-form {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.management-form label {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+  font-size: 0.87rem;
+  font-weight: 600;
+}
+
+.management-form :is(input, textarea, select),
+.chat-question input {
+  width: 100%;
+  min-width: 0;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--ink);
+}
+
+.management-form textarea {
+  resize: vertical;
+}
+
+.management-form > button {
+  justify-self: start;
+}
+
+.management-columns,
+.management-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.management-wide {
+  grid-column: 1 / -1;
+}
+
+.management-summary {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.management-summary > div {
+  display: grid;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  font-size: 0.82rem;
+}
+
+.management-summary strong {
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+.management-contact {
+  border-top: 1px solid var(--line);
+  padding-top: 0.65rem;
+  overflow-wrap: anywhere;
+}
+
+.management-contact summary {
+  cursor: pointer;
+}
+
+.management-contact summary span {
+  margin-left: 0.65rem;
+  display: inline-block;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.management-preserve {
+  white-space: pre-wrap;
+}
+
+.management-folio,
+.management-muted,
+.management-error,
+.management-success {
+  font-size: 0.85rem;
+}
+
+.management-muted,
+.management-error,
+.management-success {
+  margin: 0;
+}
+
+.management-muted { color: var(--muted); }
+.management-error { color: var(--danger); }
+.management-success { color: var(--ok); }
+
+.management-contact > p {
+  margin: 0.65rem 0;
+}
+
+.management-table {
+  overflow-x: auto;
+}
+
+.management-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  text-align: left;
+}
+
+.management-table :is(th, td) {
+  padding: 0.65rem 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.management-table thead {
+  background: var(--surface-2);
+}
+
+@media (max-width: 640px) {
+  .management-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

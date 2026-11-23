@@ -1,0 +1,100 @@
+/**
+ * Tokens de la interfaz.
+ *
+ * Ojo: estos colores son los del editor, no los del horario que se dibuja en
+ * el lienzo. Los del horario viven en `@cronia/core` (temas y paletas), porque
+ * tienen que verse igual en la exportación aunque la app esté en modo oscuro.
+ */
+
+:root {
+  --ground: #e9ece6;
+  --desk: #dde2da;
+  --surface: #fbfcfa;
+  --surface-2: #f2f4ef;
+  --ink: #17201b;
+  --muted: #5c6861;
+  --faint: #8a958e;
+  --line: #cfd6cd;
+  --line-2: #e1e6df;
+  --accent: #1e5a48;
+  --accent-ink: #f4f8f5;
+  --accent-soft: #d5e7df;
+  --mark: #f2c14e;
+  --danger: #b3402e;
+  --ok: #2e7d57;
+
+  --warn-bg: #fbe3dd;
+  --warn-line: #edb7aa;
+  --warn-ink: #8a2a1b;
+
+  --shadow:
+    0 1px 2px rgb(20 32 26 / 6%),
+    0 12px 32px -12px rgb(20 32 26 / 28%);
+
+  --ui: 'Schibsted Grotesk', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, sfmono-regular, menlo, consolas, monospace;
+
+  --radius-sm: 6px;
+  --radius: 8px;
+  --radius-lg: 12px;
+
+  color-scheme: light;
+}
+
+/** Paleta oscura, aplicada por preferencia del sistema salvo que se fuerce el claro. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --ground: #111613;
+    --desk: #0b0f0d;
+    --surface: #19201c;
+    --surface-2: #212923;
+    --ink: #e4eae5;
+    --muted: #9aa69f;
+    --faint: #6f7b74;
+    --line: #2f3933;
+    --line-2: #262f2a;
+    --accent: #7ccbae;
+    --accent-ink: #0d1a15;
+    --accent-soft: #1f3a30;
+    --danger: #f08a76;
+    --ok: #7ccbae;
+
+    --warn-bg: #3a1d17;
+    --warn-line: #6b3226;
+    --warn-ink: #f4b0a2;
+
+    --shadow:
+      0 1px 2px rgb(0 0 0 / 30%),
+      0 16px 40px -14px rgb(0 0 0 / 70%);
+
+    color-scheme: dark;
+  }
+}
+
+/** Paleta oscura forzada, independientemente del sistema. */
+:root[data-theme='dark'] {
+  --ground: #111613;
+  --desk: #0b0f0d;
+  --surface: #19201c;
+  --surface-2: #212923;
+  --ink: #e4eae5;
+  --muted: #9aa69f;
+  --faint: #6f7b74;
+  --line: #2f3933;
+  --line-2: #262f2a;
+  --accent: #7ccbae;
+  --accent-ink: #0d1a15;
+  --accent-soft: #1f3a30;
+  --danger: #f08a76;
+  --ok: #7ccbae;
+
+  --warn-bg: #3a1d17;
+  --warn-line: #6b3226;
+  --warn-ink: #f4b0a2;
+
+  --shadow:
+    0 1px 2px rgb(0 0 0 / 30%),
+    0 16px 40px -14px rgb(0 0 0 / 70%);
+
+  color-scheme: dark;
+}
